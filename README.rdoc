@@ -1,0 +1,3 @@
+== README
+
+This is my attempt at a Twitter mock up while also learning Ruby on Rails
