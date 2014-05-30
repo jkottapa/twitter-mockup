@@ -2,33 +2,24 @@ require 'spec_helper'
 
 describe "Indices" do
 
+	subject { page }
+
 	describe "Home page" do
-		it "should have the content 'Twitter Mock'" do
-			visit '/index/home'
-			expect(page).to have_content('Twitter Mock')
-		end
-
-		it "should have the base title" do
-			visit '/index/home'
-			expect(page).to have_title("Twitter Mock")
-		end
-
-		it "should have the title 'Home'" do
-			visit '/index/home'
-			expect(page).to have_title(" | Home")
-		end
+		before { visit root_path }
+		it { should have_content('Twitter Mock') }
+		it { should have_title(full_title('')) }
+		it { should_not have_title(" | Home") }		
 	end
 
 	describe "About page" do
+		before { visit about_path }
+		it { should have_content('About Me') }
+		it { should have_title("About Me") }		
+	end
 
-		it "should have the content 'About Me'" do
-			visit '/index/about'
-			expect(page).to have_content('About Me')
-		end
-
-		it "should have the title 'About Me'" do
-			visit '/index/about'
-			expect(page).to have_title("Twitter Mock | About Me")
-		end
+	describe "Contact page" do
+		before { visit contact_path }
+		it { should have_content('Contact') }
+		it { should have_title("Contact") }		
 	end
 end
