@@ -8,9 +8,14 @@ describe "Indices" do
 			expect(page).to have_content('Twitter Mock')
 		end
 
+		it "should have the base title" do
+			visit '/index/home'
+			expect(page).to have_title("Twitter Mock")
+		end
+
 		it "should have the title 'Home'" do
 			visit '/index/home'
-			expect(page).to have_title("Twitter Mock | Home")
+			expect(page).to have_title(" | Home")
 		end
 	end
 
