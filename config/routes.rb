@@ -1,5 +1,5 @@
 TwitterMock::Application.routes.draw do
-	get "users/new"
+	resources :users
 	
 	root 'index#home'
 	match '/signup',  to: 'users#new',		via: "get"
