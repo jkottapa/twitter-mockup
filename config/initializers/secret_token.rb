@@ -9,4 +9,17 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TwitterMock::Application.config.secret_key_base = '14a3db81b13f330f9221dcddb86187e8b7271cdcc7115e5d8662ac340953d143e13ad37d054e827f37dcea125d2c17139ab8bb5f83adb764fcc42882a568f402'
+
+require 'securerandom'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		File.read(token_file).chomp
+	else
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+TwitterMock::Application.config.secret_key_base = secure_token
