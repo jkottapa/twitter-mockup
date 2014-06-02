@@ -15,8 +15,12 @@ group :development, :test do
 	gem 'rspec-rails', '2.13.1'
 	gem 'capybara', '2.1.0'
 	gem 'factory_girl_rails', '4.2.1'
+	gem 'cucumber-rails', '1.4.0', :require => false
+	gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
+gem 'rb-notifu', '0.0.4'
+gem 'wdm', '0.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
