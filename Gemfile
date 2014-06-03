@@ -17,10 +17,10 @@ group :development, :test do
 	gem 'factory_girl_rails', '4.2.1'
 	gem 'cucumber-rails', '1.4.0', :require => false
 	gem 'database_cleaner', github: 'bmabey/database_cleaner'
+	gem 'rb-notifu', '0.0.4'
+	gem 'wdm', '0.1.0'
 end
 
-gem 'rb-notifu', '0.0.4'
-gem 'wdm', '0.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -50,4 +50,5 @@ end
 group :production do
 	gem 'pg', '0.15.1'
 	gem 'rails_12factor', '0.0.2'
+	gem 'libnotify',  '0.8.0'
 end
